@@ -150,7 +150,7 @@ def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
     if csi_used:
         view_img = check_imshow()
         cudnn.benchmark = True
-        dataset = LoadStreams(gstreamer_pipeline(source,display_width=1920,display_height=1080),img_size=imgsz,stride=stride, auto=pt)
+        dataset = LoadStreams(gstreamer_pipeline(source,display_width=1920,display_height=1080),img_size=imgsz,stride=stride, auto=pt, csi=True)
         bs = len(dataset)
     elif webcam:
         view_img = check_imshow()
